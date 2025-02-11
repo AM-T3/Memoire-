@@ -1,9 +1,0 @@
-getwd()
-Consomation<-read.csv("nominal_expenditures.csv")
-Population<-read.csv("pop.csv")
-Food_pattern<-read.csv("servings.csv") #ce quemange les gens en quatité dans le temps
-sucre<-read.csv("sugar.csv")
-food_mondialisation<-read.csv("ctcsp.csv")
-
-X<-read.csv("2016-Eating-and-Health-Module-Tables.zip/Table1_2016.csv")
-
