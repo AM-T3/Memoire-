@@ -14,3 +14,5 @@ Fastfood_2006<-read.csv("2016-Eating-and-Health-Module-Tables/Table4_2006.csv")
 
 Chronic_disease<-read.csv("Chronic_Disease_Indicators.csv")
 Obésité<-read.csv("2023-Obesity-by-demographic.csv")
+obésité2<-read.csv("Data.csv")
+
