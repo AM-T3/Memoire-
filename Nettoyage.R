@@ -92,7 +92,7 @@ ggplot(Overall, aes(x = Year, y = Data_value)) +
        y = "Pourcentage d'obèse dans la pop") +
   theme_minimal()  
 
-#SAME GRAPH AVEC AUTRE BASE DE DONNEE
+#SAME GRAPH AVEC AUTRE BASE DE DONNEES
 ggplot(overweight, aes(x = YEAR, y = ESTIMATE)) +
   geom_line(color = "blue", size = 1) +   # Ligne bleue
   geom_point(color = "red", size = 2) +   # Points rouges sur les années
