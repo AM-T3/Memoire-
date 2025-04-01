@@ -89,6 +89,56 @@ summary(lm(FP_fat$Moyenne_Conso ~ overweightbis$ESTIMATE))
 lm(overweightbis$ESTIMATE ~ FP_fat$Moyenne_Conso)
 summary(lm(overweightbis$ESTIMATE ~ FP_fat$Moyenne_Conso))
 
+################################
+# MODELES
+################################
+
+# Modèle 1
+model1 <- lm(FP_sugar$Moyenne_Conso ~ overweightbis$ESTIMATE)
+summary(model1)
+
+# Modèle 2
+model2 <- lm(FP_fat$Moyenne_Conso ~ overweightbis$ESTIMATE)
+summary(model2)
+
+# Modèle 3
+model3 <- lm(overweightbis$ESTIMATE ~ FP_fat$Moyenne_Conso)
+summary(model3)
+
+################################
+# DIAGNOSTICS POUR CHAQUE MODELE
+################################
+
+# ----- MODELE 1 -----
+# 1) QQ-plot
+qqnorm(model1$residuals, main = "QQ-plot - Model 1 (Sugar vs Overweight)")
+qqline(model1$residuals, col = "red")
+
+# 2) Kolmogorov-Smirnov test
+ks.test(model1$residuals, 
+        "pnorm", 
+         mean = mean(model1$residuals), 
+         sd   = sd(model1$residuals))
+
+# ----- MODELE 2 -----
+qqnorm(model2$residuals, main = "QQ-plot - Model 2 (Fat vs Overweight)")
+qqline(model2$residuals, col = "red")
+
+ks.test(model2$residuals, 
+        "pnorm", 
+         mean = mean(model2$residuals), 
+         sd   = sd(model2$residuals))
+
+# ----- MODELE 3 -----
+qqnorm(model3$residuals, main = "QQ-plot - Model 3 (Overweight vs Fat)")
+qqline(model3$residuals, col = "red")
+
+ks.test(model3$residuals, 
+        "pnorm", 
+         mean = mean(model3$residuals), 
+         sd   = sd(model3$residuals))
+
+
 
 ################################
 # MODELES
